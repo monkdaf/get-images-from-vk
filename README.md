@@ -1,10 +1,19 @@
-# boilerplate-nodejs
-boilerplate for nodejs app
+# Get images from VK
+app for download images from VK group
 
 ## Setup
 
 ```
 make install
 ```
+## Run
 
-P.S. based on hexlet boilerplate https://github.com/hexlet-boilerplates/nodejs-package
+run app
+```
+make run
+```
+
+run app with debug (example)
+```
+DEBUG=error,getImages make run
+```

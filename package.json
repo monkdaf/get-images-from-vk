@@ -1,5 +1,5 @@
 {
-  "name": "boilerplate-nodejs",
+  "name": "get-images-from-vk",
   "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
@@ -18,19 +18,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/monkdaf/boilerplate-nodejs.git"
+    "url": "git+https://github.com/monkdaf/get-images-from-vk.git"
   },
   "author": "Dmitry Fil",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/monkdaf/boilerplate-nodejs/issues"
+    "url": "https://github.com/monkdaf/get-images-from-vk/issues"
   },
-  "homepage": "https://github.com/monkdaf/boilerplate-nodejs#readme",
+  "homepage": "https://github.com/monkdaf/get-images-from-vk#readme",
   "dependencies": {
-    "gulp": "*"
+    "gulp": "*",
+    "debug": "*",
+    "node-fetch": "^1.6.3",
+    "node-vkapi": "^2.1.0"
   },
   "devDependencies": {
-    "debug": "*",
     "babel-cli": "*",
     "babel-core": "*",
     "babel-eslint": "*",

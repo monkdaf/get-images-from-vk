@@ -1,7 +1,7 @@
 install: install-deps install-flow-typed
 
 run:
-	npm run babel-node -- 'src/bin/hexlet.js' 10
+	npm run babel-node -- 'src/bin/getImages.js' -38914662
 
 install-deps:
 	yarn
