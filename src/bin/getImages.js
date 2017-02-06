@@ -3,9 +3,10 @@
 
 // import fetch from 'node-fetch';
 import debug from 'debug';
-import fs from 'fs';
+// import fs from 'fs';
 import getListImages from '../getListImages';
-
+// import downloadAllImages from '../downloadAllImages';
+import downloadImages from '../downloadImages';
 // import VKApi from 'node-vkapi';
 // import getMaxImage from '../getMaxImage';
 //
@@ -21,7 +22,7 @@ import getListImages from '../getListImages';
 // });
 
 const idGroup = process.argv[2];
-const offset = 0; // 39000;
+const offset = 0;
 // const path = process.argv[3];
 
 const getImagesLog = debug('getImages');
@@ -39,21 +40,24 @@ getListImages(idGroup, offset, [])
 //   offset: 0,
 //   count: 2,
 // })
-.then((res) => {
-  getImagesLog('Total count of images : %s', res.length);
-  if (res.count === 0) {
+.then((list) => {
+  getImagesLog('Total count of images : %s', list.length);
+  if (list.count === 0) {
     throw new Error('No iages');
   }
-  getImagesLog('first image is %s', res[0].name);
-  return JSON.stringify(res, null, ' ');
+  // getImagesLog('first image is %s', list[0].name);
+  // downloadAllImages(list);
+  downloadImages(list, 400);
+  // return JSON.stringify(res, null, ' ');
   // return getMaxImage(res.items[0]);
 })
-.then((json) => {
-  fs.writeFile('temp/list.json', json, (err) => {
-    if (err) throw err;
-    getImagesLog('list.json is saved!');
-  });
-})
+
+// .then((json) => {
+//   fs.writeFile('temp/list.json', json, (err) => {
+//     if (err) throw err;
+//     getImagesLog('list.json is saved!');
+//   });
+// })
 
 .catch((error) => {
   errorLog('Error: %s', error);
