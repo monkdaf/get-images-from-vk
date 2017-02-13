@@ -14,11 +14,14 @@ const errorLog = debug('error');
  * @param {string} url  image's url
  */
 
-// function downloadImage(name: string, url: string) {
 const downloadImage = (name: string, url: string) => {
-  // downloadImageLog('Start with url: %s', url);
+  downloadImageLog('Start with url: %s', url);
+  const arrUrl = url.split('/');
+  const encodedName = encodeURIComponent(arrUrl.pop());
+  const encodedUrl = `${arrUrl.join('/')}/${encodedName}`;
+  // downloadImageLog('Start with encodedUrl: %s', encodedUrl);
   return new Promise((resolve, reject) => {
-    fetch(url)
+    fetch(encodedUrl)
     .then((res) => {
       const dest = fs.createWriteStream(`outImages/${name}`);
       res.body.pipe(dest);
