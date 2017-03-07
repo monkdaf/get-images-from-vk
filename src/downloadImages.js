@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 // @flow
 
-// import fetch from 'node-fetch';
 import debug from 'debug';
 import downloadImage from './downloadImage';
 
@@ -15,12 +14,9 @@ const downloadImagesLog = debug('downloadImages');
  */
 
 const downloadImages = (list: [{name: string, url: string}], interval = 400) => {
-// const downloadAllImages = (url: string) => {
   downloadImagesLog('Start');
-  // return new Promise((resolve, reject) => {
   if (!list || list === []) {
     downloadImagesLog('List images is empty');
-      // reject('List images is empty');
   }
   const totalLength = list.length;
   let pointer = totalLength;

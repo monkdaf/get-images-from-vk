@@ -2,9 +2,9 @@
   "name": "get-images-from-vk",
   "version": "0.0.1",
   "description": "",
-  "main": "dist/index.js",
+  "main": "dist/bin/getImages.js",
   "bin": {
-    "hexlet": "dist/bin/hexlet.js"
+    "getImages": "dist/bin/getImages.js"
   },
   "scripts": {
     "test": "jest",
